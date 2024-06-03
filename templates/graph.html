@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Path Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .graph {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .graph img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flight Path Visualization</h1>
+    <div class="graph-container">
+        {% for title, graph in graphs.items() %}
+        <div class="graph">
+            <h2>{{ title }}</h2>
+            <img src="data:image/png;base64,{{ graph }}" alt="Graph">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
